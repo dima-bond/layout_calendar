@@ -1,0 +1,11 @@
+.calendar div:hover {
+  animation: move-up-pink 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move-up-pink {
+  to {
+    background-color: pink;
+    transform: translate(0, -20px);
+  }
+}

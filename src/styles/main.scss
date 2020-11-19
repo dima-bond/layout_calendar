@@ -1,3 +1,22 @@
-body {
-  margin: 0;
+@import "reset";
+@import "item";
+@import "animation";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 750px;
+  margin: 50px auto;
 }

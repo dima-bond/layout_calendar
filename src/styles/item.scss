@@ -1,0 +1,40 @@
+@import "variables";
+@import "mixins";
+
+@each $day, $number in $days {
+  .#{$day} :first-child {
+    @include tile;
+    margin: 1px 1px 0 #{$number * 100px + $number};
+  
+    &:first-child::after {
+      content: "1";
+      @include flex-center;
+      font-size: $font-tile;
+    }
+  }
+}
+
+@for $i from 2 through 31 {
+  .calendar :nth-child(#{$i}) {
+    @include tile;
+    margin: 1px 1px 0 0;
+
+    &::after {
+      content: "#{$i}";
+      @include flex-center;
+      font-size: $font-tile;
+    }
+  }
+}
+
+.calendar-30 :last-child {
+  display: none;
+}
+
+.calendar-29 :nth-child(n+30) {
+  display: none;
+}
+
+.calendar-28 :nth-child(n+29) {
+  display: none;
+}
