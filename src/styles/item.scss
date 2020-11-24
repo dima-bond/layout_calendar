@@ -5,7 +5,7 @@
   .#{$day} :first-child {
     @include tile;
     margin: 1px 1px 0 #{$number * 100px + $number};
-  
+
     &:first-child::after {
       content: "1";
       @include flex-center;
@@ -27,14 +27,8 @@
   }
 }
 
-.calendar-30 :last-child {
-  display: none;
-}
-
-.calendar-29 :nth-child(n+30) {
-  display: none;
-}
-
-.calendar-28 :nth-child(n+29) {
-  display: none;
+@for $j from 28 through 30 {
+  .calendar-#{$j} :nth-child(n+#{$j + 1}) {
+    display: none;
+  }
 }
